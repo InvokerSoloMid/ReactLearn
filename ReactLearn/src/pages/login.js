@@ -16,6 +16,10 @@ class Login extends Component {
     this.setState({password: 'changed!'});
   };
 
+  getRequest = () => {
+    this.setState({password: 'Invoker!'})
+  }
+
   handleEmail = (value) => {
     this.state.email = value;
   }
@@ -49,13 +53,13 @@ class Login extends Component {
           />
         </View>
         <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity style={styles.submitButton} onPress={this.login}>
+          <TouchableOpacity style={styles.submitButton} onPress={this.getRequest}>
             <Text style={styles.submitButtonText}> Submit </Text>
           </TouchableOpacity>
         </View>
         <View>
           <Text>
-            Password:{this.password}
+            Password:{this.state.password}
           </Text>
         </View>
       </View>
